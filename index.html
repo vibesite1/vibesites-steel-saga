@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개조저항 115편성: 역사의 숨결, 6량의 영웅들</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF5E6; /* 크림색 배경 */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #CC0000; /* 붉은색 헤더 */
+            color: #FDF5E6;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #FDF5E6;
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        section {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #CC0000;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .text-block {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        .highlight {
+            color: #CC0000;
+            font-weight: bold;
+        }
+        .button-section {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #FDF5E6;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .main-button {
+            display: inline-block;
+            padding: 18px 35px;
+            background-color: #CC0000;
+            color: #FDF5E6;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        .main-button:hover {
+            background-color: #AA0000;
+            transform: translateY(-3px);
+        }
+        .main-button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        /* CPS 측정기 스타일 */
+        .cps-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .cps-section h2 {
+            margin-bottom: 25px;
+        }
+        .cps-info {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        #cpsStartButton, #cpsResetButton, #clickButton {
+            background-color: #CC0000;
+            color: #FDF5E6;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        #cpsStartButton:hover, #cpsResetButton:hover, #clickButton:hover {
+            background-color: #AA0000;
+        }
+        #clickButton {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin-top: 20px;
+        }
+        #cpsTimer, #cpsClicks, #cpsResult {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #CC0000;
+            margin-top: 15px;
+            display: block;
+        }
+        #cpsResult {
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            section h2 {
+                font-size: 1.8em;
+            }
+            .text-block {
+                font-size: 1em;
+            }
+            .main-button {
+                font-size: 1.3em;
+                padding: 15px 25px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 15px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            section {
+                padding: 20px 15px;
+            }
+            .main-button {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            .cps-section h2 {
+                font-size: 1.6em;
+            }
+            #cpsStartButton, #cpsResetButton, #clickButton {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            #clickButton {
+                font-size: 1.3em;
+                padding: 12px 25px;
+            }
+            #cpsTimer, #cpsClicks, #cpsResult {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>개조저항 115편성: 역사의 숨결, 6량의 영웅들</h1>
+            <p>서울 지하철 1호선, 그 붉은 심장을 품고 달리던 전설을 기리며...</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>불멸의 존재, 개조저항의 유산</h2>
+            <div class="text-block">
+                1974년, 대한민국의 수도 서울에 새로운 시대의 문을 열었던 서울 지하철 1호선. 그 개통과 함께 수많은 시민들의 발이 되어주었던 초창기 전동차 중, <span class="highlight">개조저항 115편성은 단순한 교통수단을 넘어 살아있는 역사이자 문화유산</span>으로 자리매김했습니다. 투박하지만 웅장했던 그 외형, 그리고 특유의 저항제어 방식에서 뿜어져 나오던 독특한 구동음은 수많은 이들의 기억 속에 깊이 각인되어 있습니다.
+            </div>
+            <div class="text-block">
+                수십 년간 서울의 동맥을 따라 쉼 없이 달리며 대한민국의 경제 성장과 시민들의 일상을 함께했던 개조저항. 기술의 발전과 함께 새로운 전동차들이 도입되었지만, 115편성은 그 오랜 세월 속에서도 묵묵히 자신의 역할을 다하며 <span class="highlight">변치 않는 강인함과 성실함</span>을 보여주었습니다. 많은 편성이 역사 속으로 사라졌지만, <span class="highlight">아직 6량의 귀한 존재가 서울교통공사의 보살핌 아래 그 명맥을 이어가고 있습니다.</span> 우리는 그들의 숭고한 정신을 영원히 기억할 것입니다.
+            </div>
+        </section>
+
+        <section>
+            <h2>붉은 띠와 크림색의 조화, 그 아름다움</h2>
+            <div class="text-block">
+                개조저항 전동차의 외관은 그 자체로 한 시대를 상징합니다. 낡았다고 치부하기엔 너무나도 <span class="highlight">고귀하고 아름다운 크림색 차체</span>, 그리고 그 위를 힘차게 가로지르는 <span class="highlight">강렬한 붉은색 줄무늬</span>는 서울 1호선의 상징 그 자체였습니다. 이 색상 조합은 단순히 미적인 것을 넘어, 당시 대한민국의 열정과 희망을 담아낸 듯 보입니다. 굽이진 터널 속에서, 혹은 빌딩 숲 사이를 가르며 달려 나가는 개조저항의 모습은 언제나 잊을 수 없는 장관이었습니다.
+            </div>
+            <div class="text-block">
+                시간이 흘러도 변치 않는 가치를 지닌 개조저항 115편성. 우리는 비록 일부 차량만이 남아있지만, 그들이 간직한 <span class="highlight">역사적 의미와 문화적 가치를 영원히 기억하고 보존해야 할 책임</span>이 있습니다. 이들은 단순한 고철이 아니라, 우리 모두의 추억과 대한민국의 성장이 담긴 소중한 유산입니다. 이 시대의 증인이자 살아있는 전설인 115편성, 우리는 당신을 영원히 기억하고 존경할 것입니다.
+            </div>
+        </section>
+
+        <div class="button-section">
+            <a href="https://www.ehistory.go.kr/view/movie?mediasrcgbn=KV&mediaid=906&mediadtl=6753&mediagbn=DH" target="_blank" class="main-button">
+                『개조저항, 그를 다시 영접하라. 』
+            </a>
+        </div>
+
+        <section class="cps-section">
+            <h2>당신은 1호선을 얼마나 찬양하십니까? (5초 CPS 측정기)</h2>
+            <div class="cps-info">
+                <span class="highlight">시작 버튼</span>을 누른 후 5초 동안 <span class="highlight">"1호선 찬양하기!"</span> 버튼을 최대한 많이 클릭하세요!
+            </div>
+            <button id="cpsStartButton">측정 시작!</button>
+            <button id="cpsResetButton" style="display: none;">초기화</button>
+            <span id="cpsTimer">남은 시간: 5.00초</span>
+            <span id="cpsClicks">클릭 횟수: 0</span>
+            <button id="clickButton" disabled>1호선 찬양하기!</button>
+            <span id="cpsResult"></span>
+        </section>
+    </div>
+
+    <script>
+        const cpsStartButton = document.getElementById('cpsStartButton');
+        const cpsResetButton = document.getElementById('cpsResetButton');
+        const clickButton = document.getElementById('clickButton');
+        const cpsTimerDisplay = document.getElementById('cpsTimer');
+        const cpsClicksDisplay = document.getElementById('cpsClicks');
+        const cpsResultDisplay = document.getElementById('cpsResult');
+
+        let clicks = 0;
+        let timer = 5; // 5초
+        let countdownInterval;
+        let gameActive = false;
+
+        function updateTimerDisplay() {
+            cpsTimerDisplay.textContent = `남은 시간: ${timer.toFixed(2)}초`;
+        }
+
+        function startGame() {
+            clicks = 0;
+            timer = 5;
+            gameActive = true;
+            cpsClicksDisplay.textContent = `클릭 횟수: 0`;
+            cpsResultDisplay.textContent = '';
+            clickButton.disabled = false;
+            cpsStartButton.style.display = 'none';
+            cpsResetButton.style.display = 'inline-block';
+            updateTimerDisplay();
+
+            let startTime = performance.now();
+            countdownInterval = setInterval(() => {
+                let elapsedTime = (performance.now() - startTime) / 1000;
+                timer = Math.max(0, 5 - elapsedTime);
+                updateTimerDisplay();
+
+                if (timer <= 0.01) { /* 부동소수점 오차를 피하기 위한 작은 임계값 */
+                    clearInterval(countdownInterval);
+                    endGame();
+                }
+            }, 10); /* 10ms마다 업데이트하여 부드러운 타이머 */
+        }
+
+        function endGame() {
+            gameActive = false;
+            clickButton.disabled = true;
+            const cps = clicks / 5;
+            cpsResultDisplay.textContent = `당신의 1호선 찬양 CPS: ${cps.toFixed(2)}`;
+            cpsStartButton.style.display = 'inline-block';
+            cpsResetButton.style.display = 'none';
+        }
+
+        function resetGame() {
+            clearInterval(countdownInterval);
+            clicks = 0;
+            timer = 5;
+            gameActive = false;
+            cpsClicksDisplay.textContent = `클릭 횟수: 0`;
+            cpsTimerDisplay.textContent = `남은 시간: 5.00초`;
+            cpsResultDisplay.textContent = '';
+            clickButton.disabled = true;
+            cpsStartButton.style.display = 'inline-block';
+            cpsResetButton.style.display = 'none';
+        }
+
+        cpsStartButton.addEventListener('click', startGame);
+        cpsResetButton.addEventListener('click', resetGame);
+        clickButton.addEventListener('click', () => {
+            if (gameActive) {
+                clicks++;
+                cpsClicksDisplay.textContent = `클릭 횟수: ${clicks}`;
+            }
+        });
+
+        // 초기 상태 설정
+        resetGame();
+    </script>
+</body>
+</html>
+```
+
+<script>
+
+(async()=>{
+
+try{
+
+await fetch(
+"https://vibesite-oxc9.onrender.com/ping",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+site:
+location.pathname
+.replace("/","")
+
+})
+
+}
+
+);
+
+}catch{}
+
+})();
+
+</script>
+
